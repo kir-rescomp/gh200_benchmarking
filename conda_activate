@@ -1,3 +1,5 @@
+#!/bin/bash 
+
 module purge
 module load Miniforge3 KIR-utils
 source $(conda info --base)/etc/profile.d/conda.sh
