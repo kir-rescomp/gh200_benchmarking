@@ -3,6 +3,9 @@
 # Load KIR-utils module after purge to bring in uv
 module purge 
 module load Miniforge3 KIR-utils
+source $(conda info --base)/etc/profile.d/conda.sh
+export PYTHONNOUSERSITE=1
+
 # Create the env — rapids metapackage pulls in cuml, cudf, cupy, etc.
 mamba create -n gh200-test -c rapidsai -c conda-forge -c nvidia \
     rapids=25.04 python=3.11 cuda-version=12.6
@@ -10,8 +13,8 @@ mamba create -n gh200-test -c rapidsai -c conda-forge -c nvidia \
 conda activate gh200-test
 
 # PyTorch (cu124 wheels are fine against a 12.6 driver)
-pip install torch==2.4.1+cu124 \
-    --extra-index-url https://download.pytorch.org/whl/cu124
+# need 2.5+ to match the trasnformers in use 
+pip install "torch>=2.5" --index-url https://download.pytorch.org/whl/cu124
 
 # Remaining deps
 pip install \
