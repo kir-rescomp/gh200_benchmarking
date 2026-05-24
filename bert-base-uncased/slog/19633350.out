@@ -1,0 +1,11 @@
+Job started at Sun May 24 04:50:57 PM BST 2026
+Running on node: compgh001.hpc.in.bmrc.ox.ac.uk
+GPUs: 2
+Initializing distributed training rank 0 with backend: nccl on device: cuda:0
+Initializing distributed training rank 1 with backend: nccl on device: cuda:1
+Distributed training initialized with 2 processes using backend nccl.
+Running benchmark with world size: 2, batch size: 32, per GPU batch size: 16, training steps: 2
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  23%|██▎       | 45/199 [00:00<00:00, 449.73it/s]Loading weights:  23%|██▎       | 46/199 [00:00<00:00, 405.69it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1166.28it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1080.83it/s]
+Time taken for 2 forward and backward pass(es) with BATCH_SIZE=32 on 2 workers: 0.9750022888183594 seconds
+Job finished at Sun May 24 04:51:52 PM BST 2026

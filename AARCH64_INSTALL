@@ -1,0 +1,18 @@
+module use /users/sansom/mat611/easybuild/kir-test/neoverse_v2/modules/all/
+module load Miniforge3/26.3.2-2-aarch64
+
+mamba create -n gh200-test-aarch64 \
+    -c rapidsai -c conda-forge -c nvidia \
+    rapids=25.04 python=3.11 cuda-version=12.6 \
+    pytorch torchvision torchaudio
+
+source "$(conda info --base)/etc/profile.d/conda.sh"
+conda activate gh200-test-aarch64
+
+pip install "torch>=2.5" --index-url https://download.pytorch.org/whl/cu124
+mamba install -c nvidia cuda-cudart-dev cuda-compiler
+mamba install ninja
+
+
+export CUDA_HOME=$CONDA_PREFIX
+export CUDA_TOOLKIT_ROOT_DIR=$CONDA_PREFIX
