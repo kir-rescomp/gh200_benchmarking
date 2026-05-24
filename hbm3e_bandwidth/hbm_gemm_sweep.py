@@ -73,7 +73,7 @@ def print_header():
 
 def print_row(r: dict):
     shape_str = f"{r['M']}³"
-    peak_tflops = THEORETICAL_BF16_TFLOPS if r["dtype"] == "bfloat16" else THEORETICAL_FP32_TFLOPS
+    peak_tflops = THEORETICAL_FP32_TFLOPS if r["dtype"] == "float32" else THEORETICAL_BF16_TFLOPS
     pct_tflops  = r["tflops"]  / peak_tflops * 100
     pct_bw      = r["bw_gbs"] / (THEORETICAL_HBM_BW_TBS * 1000) * 100
     print(f"{shape_str:>16} | {r['dtype']:>7} | {r['elapsed_ms']:>9.2f} | "
@@ -129,6 +129,5 @@ if __name__ == "__main__":
                 print_row(r)
             except torch.cuda.OutOfMemoryError:
                 print(f"  ({M},{N},{K}) OOM")
-
-    print(f"\nExpected GH200 peaks: BF16 ~60–70% of {THEORETICAL_BF16_TFLOPS} TFLOPS practical")
-    print(f"Expected HBM3e BW:    ~70–85% of {THEORETICAL_HBM_BW_TBS*1000:.0f} GB/s practical")
+    print(f"Expected GH200 peaks: BF16 ~60–80% of ~989 TFLOPS dense theoretical")
+    print(f"  (1979 TFLOPS is sparse TC peak; practical dense GEMM ceiling ~989 TFLOPS)")
