@@ -62,6 +62,7 @@ def main():
     rank_print(rank, f"{'='*64}\n")
 
     config = AutoConfig.from_pretrained(MODEL_NAME)
+    config.use_cache = False
 
     wrap_policy = partial(
         transformer_auto_wrap_policy,
@@ -120,7 +121,7 @@ def main():
 
         t0 = time.perf_counter()
 
-        out  = model(input_ids=input_ids, labels=input_ids)
+        out  = model(input_ids=input_ids, labels=input_ids, use_cache=False)
         loss = out.loss
         loss.backward()
 
