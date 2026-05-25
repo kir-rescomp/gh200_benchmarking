@@ -1,2 +1,2 @@
-# gh200_benchmarking
-gh200_benchmarking
+# GH200 Benchmarking
+
