@@ -2,13 +2,13 @@
 GH200 Test 1: FSDP forward+backward across 2x GH200 144GB GPUs.
 Model  : Qwen2.5-72B
 Run    : torchrun --nproc_per_node=2 fsdp_llm_train.py
-Requires: torch>=2.4, transformers
-          flash-attn (required for SEQ_LEN=8192 — install separately):
-              uv pip install flash-attn --no-build-isolation
+Requires: torch>=2.4, transformers, flash-attn
 """
 
 import os
 import time
+from functools import partial
+
 import torch
 import torch.distributed as dist
 from torch.distributed.fsdp import (
@@ -18,16 +18,20 @@ from torch.distributed.fsdp import (
     BackwardPrefetch,
 )
 from torch.distributed.fsdp.wrap import transformer_auto_wrap_policy
+from torch.distributed.algorithms._checkpoint.checkpoint_wrapper import (
+    apply_activation_checkpointing,
+    checkpoint_wrapper,
+    CheckpointImpl,
+)
 from transformers import AutoModelForCausalLM, AutoConfig
 from transformers.models.qwen2.modeling_qwen2 import Qwen2DecoderLayer
-from functools import partial
 
 # ── Config ───────────────────────────────────────────────────────────────────
 MODEL_NAME   = "/well/kir/mirror/LLM/huggingface/Qwen-Qwen2.5-72B"
 SEQ_LEN      = 8192   # long context — exercises HBM3e bandwidth
-BATCH_SIZE   = 1      # per GPU; keep at 1 to stay within 144 GB without optimizer
+BATCH_SIZE   = 1      # per GPU
 N_STEPS      = 30
-WARMUP_STEPS = 5      # discarded from timing stats
+WARMUP_STEPS = 5
 # ─────────────────────────────────────────────────────────────────────────────
 
 
@@ -74,7 +78,7 @@ def main():
     with torch.device("meta"):
         model = AutoModelForCausalLM.from_config(
             config,
-            torch_dtype=torch.bfloat16,
+            dtype=torch.bfloat16,
             attn_implementation="flash_attention_2",
         )
 
@@ -90,6 +94,20 @@ def main():
         limit_all_gathers=True,
         use_orig_params=True,
     )
+
+    # ── Gradient checkpointing ───────────────────────────────────────────────
+    # Recomputes MLP/attention intermediates during backward instead of storing
+    # them. Drops activation memory from ~160GB to ~11GB across 80 layers.
+    rank_print(rank, "Applying activation checkpointing ...")
+    apply_activation_checkpointing(
+        model,
+        checkpoint_wrapper_fn=partial(
+            checkpoint_wrapper,
+            checkpoint_impl=CheckpointImpl.NO_REENTRANT,
+        ),
+        check_fn=lambda m: isinstance(m, Qwen2DecoderLayer),
+    )
+    # ─────────────────────────────────────────────────────────────────────────
 
     rank_print(rank, f"Model ready | {mem_str(device)}\n")
 
@@ -109,7 +127,7 @@ def main():
         torch.cuda.synchronize()
         t1 = time.perf_counter()
 
-        # No optimizer step — clear grads manually
+        # No optimizer — clear grads manually
         for p in model.parameters():
             p.grad = None
 
