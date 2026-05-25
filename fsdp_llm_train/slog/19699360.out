@@ -1,0 +1,248 @@
+Job started  : Mon May 25 02:50:57 PM BST 2026
+Node         : compgh001.hpc.in.bmrc.ox.ac.uk
+GPUs on node : 2
+
+================================================================
+GH200 Test 1 — FSDP Forward Pass (inference mode)
+Model      : /well/kir/mirror/LLM/huggingface/Qwen-Qwen2.5-72B
+GPUs       : 2
+Seq len    : 8192 | Batch/GPU: 8
+Steps      : 100 (10 warmup discarded)
+================================================================
+
+Instantiating model on meta device ...
+Wrapping with FSDP ...
+Model ready | alloc=72.7GB | peak=82.7GB
+
+compgh001:2066546:2066546 [0] NCCL INFO Bootstrap: Using ib-bond0:10.128.7.1<0>
+compgh001:2066546:2066546 [0] NCCL INFO cudaDriverVersion 12090
+compgh001:2066546:2066546 [0] NCCL INFO NCCL version 2.26.2+cuda12.8
+compgh001:2066546:2066546 [0] NCCL INFO Comm config Blocking set to 1
+compgh001:2066547:2066547 [1] NCCL INFO cudaDriverVersion 12090
+compgh001:2066547:2066547 [1] NCCL INFO Bootstrap: Using ib-bond0:10.128.7.1<0>
+compgh001:2066547:2066547 [1] NCCL INFO NCCL version 2.26.2+cuda12.8
+compgh001:2066547:2066547 [1] NCCL INFO Comm config Blocking set to 1
+compgh001:2066546:2066714 [0] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. Using internal net plugin.
+compgh001:2066547:2066715 [1] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. Using internal net plugin.
+compgh001:2066546:2066714 [0] NCCL INFO NET/IB : Using [0]mlx5_0:1/IB [1]mlx5_1:1/IB [2]mlx5_2:1/RoCE [RO]; OOB ib-bond0:10.128.7.1<0>
+compgh001:2066546:2066714 [0] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+compgh001:2066546:2066714 [0] NCCL INFO Using network IB
+compgh001:2066547:2066715 [1] NCCL INFO NET/IB : Using [0]mlx5_0:1/IB [1]mlx5_1:1/IB [2]mlx5_2:1/RoCE [RO]; OOB ib-bond0:10.128.7.1<0>
+compgh001:2066547:2066715 [1] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+compgh001:2066547:2066715 [1] NCCL INFO Using network IB
+compgh001:2066546:2066714 [0] NCCL INFO DMA-BUF is available on GPU device 0
+compgh001:2066546:2066714 [0] NCCL INFO ncclCommInitRankConfig comm 0xaaaaf8abec00 rank 0 nranks 2 cudaDev 0 nvmlDev 0 busId 901000 commId 0xc7f28f3097f32ec3 - Init START
+compgh001:2066547:2066715 [1] NCCL INFO DMA-BUF is available on GPU device 1
+compgh001:2066547:2066715 [1] NCCL INFO ncclCommInitRankConfig comm 0xaaab0ac6d570 rank 1 nranks 2 cudaDev 1 nvmlDev 1 busId 1901000 commId 0xc7f28f3097f32ec3 - Init START
+compgh001:2066546:2066714 [0] NCCL INFO RAS client listening socket at ::1<28028>
+compgh001:2066547:2066715 [1] NCCL INFO RAS client listening socket at ::1<28028>
+compgh001:2066546:2066714 [0] NCCL INFO Bootstrap timings total 0.127177 (create 0.000033, send 0.000107, recv 0.028522, ring 0.000023, delay 0.000001)
+compgh001:2066547:2066715 [1] NCCL INFO Bootstrap timings total 0.098694 (create 0.000026, send 0.000080, recv 0.000094, ring 0.054989, delay 0.000000)
+compgh001:2066546:2066714 [0] NCCL INFO Setting affinity for GPU 0 to 0f,ffffffff
+compgh001:2066547:2066715 [1] NCCL INFO Setting affinity for GPU 1 to 0fff,ffffff00,00000000,00000000
+compgh001:2066546:2066714 [0] NCCL INFO comm 0xaaaaf8abec00 rank 0 nRanks 2 nNodes 1 localRanks 2 localRank 0 MNNVL 0
+compgh001:2066547:2066715 [1] NCCL INFO comm 0xaaab0ac6d570 rank 1 nRanks 2 nNodes 1 localRanks 2 localRank 1 MNNVL 0
+compgh001:2066546:2066714 [0] NCCL INFO Channel 00/24 : 0 1
+compgh001:2066547:2066715 [1] NCCL INFO Trees [0] -1/-1/-1->1->0 [1] -1/-1/-1->1->0 [2] -1/-1/-1->1->0 [3] -1/-1/-1->1->0 [4] -1/-1/-1->1->0 [5] -1/-1/-1->1->0 [6] 0/-1/-1->1->-1 [7] 0/-1/-1->1->-1 [8] 0/-1/-1->1->-1 [9] 0/-1/-1->1->-1 [10] 0/-1/-1->1->-1 [11] 0/-1/-1->1->-1 [12] -1/-1/-1->1->0 [13] -1/-1/-1->1->0 [14] -1/-1/-1->1->0 [15] -1/-1/-1->1->0 [16] -1/-1/-1->1->0 [17] -1/-1/-1->1->0 [18] 0/-1/-1->1->-1 [19] 0/-1/-1->1->-1 [20] 0/-1/-1->1->-1 [21] 0/-1/-1->1->-1 [22] 0/-1/-1->1->-1 [23] 0/-1/-1->1->-1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 01/24 : 0 1
+compgh001:2066547:2066715 [1] NCCL INFO P2P Chunksize set to 524288
+compgh001:2066546:2066714 [0] NCCL INFO Channel 02/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 03/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 04/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 05/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 06/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 07/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 08/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 09/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 10/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 11/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 12/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 13/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 14/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 15/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 16/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 17/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 18/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 19/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 20/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 21/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 22/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Channel 23/24 : 0 1
+compgh001:2066546:2066714 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 [4] 1/-1/-1->0->-1 [5] 1/-1/-1->0->-1 [6] -1/-1/-1->0->1 [7] -1/-1/-1->0->1 [8] -1/-1/-1->0->1 [9] -1/-1/-1->0->1 [10] -1/-1/-1->0->1 [11] -1/-1/-1->0->1 [12] 1/-1/-1->0->-1 [13] 1/-1/-1->0->-1 [14] 1/-1/-1->0->-1 [15] 1/-1/-1->0->-1 [16] 1/-1/-1->0->-1 [17] 1/-1/-1->0->-1 [18] -1/-1/-1->0->1 [19] -1/-1/-1->0->1 [20] -1/-1/-1->0->1 [21] -1/-1/-1->0->1 [22] -1/-1/-1->0->1 [23] -1/-1/-1->0->1
+compgh001:2066546:2066714 [0] NCCL INFO P2P Chunksize set to 524288
+compgh001:2066546:2066714 [0] NCCL INFO Check P2P Type intraNodeP2pSupport 1 directMode 0
+compgh001:2066546:2066784 [0] NCCL INFO [Proxy Service] Device 0 CPU core 16
+compgh001:2066546:2066785 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 27
+compgh001:2066547:2066786 [1] NCCL INFO [Proxy Service] Device 1 CPU core 73
+compgh001:2066547:2066787 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 75
+compgh001:2066547:2066715 [1] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+compgh001:2066547:2066715 [1] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+compgh001:2066546:2066714 [0] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+compgh001:2066546:2066714 [0] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+compgh001:2066546:2066714 [0] NCCL INFO CC Off, workFifoBytes 1048576
+compgh001:2066546:2066714 [0] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+compgh001:2066546:2066714 [0] NCCL INFO ncclCommInitRankConfig comm 0xaaaaf8abec00 rank 0 nranks 2 cudaDev 0 nvmlDev 0 busId 901000 commId 0xc7f28f3097f32ec3 - Init COMPLETE
+compgh001:2066546:2066714 [0] NCCL INFO Init timings - ncclCommInitRankConfig: rank 0 nranks 2 total 0.80 (kernels 0.47, alloc 0.17, bootstrap 0.13, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.02, rest 0.01)
+compgh001:2066547:2066715 [1] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+compgh001:2066547:2066715 [1] NCCL INFO ncclCommInitRankConfig comm 0xaaab0ac6d570 rank 1 nranks 2 cudaDev 1 nvmlDev 1 busId 1901000 commId 0xc7f28f3097f32ec3 - Init COMPLETE
+compgh001:2066547:2066715 [1] NCCL INFO Init timings - ncclCommInitRankConfig: rank 1 nranks 2 total 0.80 (kernels 0.47, alloc 0.19, bootstrap 0.10, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.02, rest 0.01)
+compgh001:2066547:2066795 [1] NCCL INFO Channel 00/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 00/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 01/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 01/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 02/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 02/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 03/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 03/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 04/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 04/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 05/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 05/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 06/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 06/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 07/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 07/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 08/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 08/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 09/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 09/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 10/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 10/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 11/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 11/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 12/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 12/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 13/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 13/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 14/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 14/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 15/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 15/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 16/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 16/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 17/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 17/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 18/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 18/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 19/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 19/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 20/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 20/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 21/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 21/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 22/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 22/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066547:2066795 [1] NCCL INFO Channel 23/0 : 1[1] -> 0[0] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Channel 23/0 : 0[0] -> 1[1] via P2P/CUMEM
+compgh001:2066546:2066794 [0] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+compgh001:2066547:2066795 [1] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+step   1/100 | time=16.62s | tokens/s=7,887 | alloc=97.7GB | peak=98.7GB
+step   2/100 | time=14.27s | tokens/s=9,182 | alloc=97.7GB | peak=118.7GB
+step   3/100 | time=14.27s | tokens/s=9,186 | alloc=97.7GB | peak=118.7GB
+step   4/100 | time=14.27s | tokens/s=9,186 | alloc=97.7GB | peak=118.7GB
+step   5/100 | time=14.27s | tokens/s=9,184 | alloc=97.7GB | peak=118.7GB
+step   6/100 | time=14.26s | tokens/s=9,192 | alloc=97.7GB | peak=118.7GB
+step   7/100 | time=14.26s | tokens/s=9,194 | alloc=97.7GB | peak=118.7GB
+step   8/100 | time=14.26s | tokens/s=9,194 | alloc=97.7GB | peak=118.7GB
+step   9/100 | time=14.26s | tokens/s=9,194 | alloc=97.7GB | peak=118.7GB
+step  10/100 | time=14.25s | tokens/s=9,195 | alloc=97.7GB | peak=118.7GB
+step  11/100 | time=14.26s | tokens/s=9,194 | alloc=97.7GB | peak=118.7GB
+step  12/100 | time=14.25s | tokens/s=9,199 | alloc=97.7GB | peak=118.7GB
+step  13/100 | time=14.24s | tokens/s=9,203 | alloc=97.7GB | peak=118.7GB
+step  14/100 | time=14.24s | tokens/s=9,203 | alloc=97.7GB | peak=118.7GB
+step  15/100 | time=14.24s | tokens/s=9,202 | alloc=97.7GB | peak=118.7GB
+step  16/100 | time=14.25s | tokens/s=9,197 | alloc=97.7GB | peak=118.7GB
+step  17/100 | time=14.24s | tokens/s=9,202 | alloc=97.7GB | peak=118.7GB
+step  18/100 | time=14.24s | tokens/s=9,206 | alloc=97.7GB | peak=118.7GB
+step  19/100 | time=14.24s | tokens/s=9,205 | alloc=97.7GB | peak=118.7GB
+step  20/100 | time=14.24s | tokens/s=9,203 | alloc=97.7GB | peak=118.7GB
+step  21/100 | time=14.25s | tokens/s=9,197 | alloc=97.7GB | peak=118.7GB
+step  22/100 | time=14.26s | tokens/s=9,189 | alloc=97.7GB | peak=118.7GB
+step  23/100 | time=14.28s | tokens/s=9,181 | alloc=97.7GB | peak=118.7GB
+step  24/100 | time=14.28s | tokens/s=9,180 | alloc=97.7GB | peak=118.7GB
+step  25/100 | time=14.28s | tokens/s=9,179 | alloc=97.7GB | peak=118.7GB
+step  26/100 | time=14.28s | tokens/s=9,178 | alloc=97.7GB | peak=118.7GB
+step  27/100 | time=14.28s | tokens/s=9,180 | alloc=97.7GB | peak=118.7GB
+step  28/100 | time=14.28s | tokens/s=9,180 | alloc=97.7GB | peak=118.7GB
+step  29/100 | time=14.28s | tokens/s=9,178 | alloc=97.7GB | peak=118.7GB
+step  30/100 | time=14.28s | tokens/s=9,180 | alloc=97.7GB | peak=118.7GB
+step  31/100 | time=14.28s | tokens/s=9,181 | alloc=97.7GB | peak=118.7GB
+step  32/100 | time=14.28s | tokens/s=9,181 | alloc=97.7GB | peak=118.7GB
+step  33/100 | time=14.28s | tokens/s=9,180 | alloc=97.7GB | peak=118.7GB
+step  34/100 | time=14.28s | tokens/s=9,180 | alloc=97.7GB | peak=118.7GB
+step  35/100 | time=14.28s | tokens/s=9,180 | alloc=97.7GB | peak=118.7GB
+step  36/100 | time=14.28s | tokens/s=9,180 | alloc=97.7GB | peak=118.7GB
+step  37/100 | time=14.28s | tokens/s=9,179 | alloc=97.7GB | peak=118.7GB
+step  38/100 | time=14.28s | tokens/s=9,179 | alloc=97.7GB | peak=118.7GB
+step  39/100 | time=14.27s | tokens/s=9,183 | alloc=97.7GB | peak=118.7GB
+step  40/100 | time=14.26s | tokens/s=9,190 | alloc=97.7GB | peak=118.7GB
+step  41/100 | time=14.25s | tokens/s=9,201 | alloc=97.7GB | peak=118.7GB
+step  42/100 | time=14.25s | tokens/s=9,197 | alloc=97.7GB | peak=118.7GB
+step  43/100 | time=14.27s | tokens/s=9,186 | alloc=97.7GB | peak=118.7GB
+step  44/100 | time=14.28s | tokens/s=9,177 | alloc=97.7GB | peak=118.7GB
+step  45/100 | time=14.28s | tokens/s=9,176 | alloc=97.7GB | peak=118.7GB
+step  46/100 | time=14.28s | tokens/s=9,180 | alloc=97.7GB | peak=118.7GB
+step  47/100 | time=14.28s | tokens/s=9,178 | alloc=97.7GB | peak=118.7GB
+step  48/100 | time=14.28s | tokens/s=9,177 | alloc=97.7GB | peak=118.7GB
+step  49/100 | time=14.28s | tokens/s=9,178 | alloc=97.7GB | peak=118.7GB
+step  50/100 | time=14.28s | tokens/s=9,178 | alloc=97.7GB | peak=118.7GB
+step  51/100 | time=14.28s | tokens/s=9,177 | alloc=97.7GB | peak=118.7GB
+step  52/100 | time=14.28s | tokens/s=9,176 | alloc=97.7GB | peak=118.7GB
+step  53/100 | time=14.28s | tokens/s=9,177 | alloc=97.7GB | peak=118.7GB
+step  54/100 | time=14.28s | tokens/s=9,178 | alloc=97.7GB | peak=118.7GB
+step  55/100 | time=14.28s | tokens/s=9,178 | alloc=97.7GB | peak=118.7GB
+step  56/100 | time=14.28s | tokens/s=9,177 | alloc=97.7GB | peak=118.7GB
+step  57/100 | time=14.28s | tokens/s=9,177 | alloc=97.7GB | peak=118.7GB
+step  58/100 | time=14.28s | tokens/s=9,177 | alloc=97.7GB | peak=118.7GB
+step  59/100 | time=14.28s | tokens/s=9,178 | alloc=97.7GB | peak=118.7GB
+step  60/100 | time=14.28s | tokens/s=9,176 | alloc=97.7GB | peak=118.7GB
+step  61/100 | time=14.28s | tokens/s=9,178 | alloc=97.7GB | peak=118.7GB
+step  62/100 | time=14.27s | tokens/s=9,182 | alloc=97.7GB | peak=118.7GB
+step  63/100 | time=14.27s | tokens/s=9,184 | alloc=97.7GB | peak=118.7GB
+step  64/100 | time=14.27s | tokens/s=9,184 | alloc=97.7GB | peak=118.7GB
+step  65/100 | time=14.28s | tokens/s=9,181 | alloc=97.7GB | peak=118.7GB
+step  66/100 | time=14.28s | tokens/s=9,178 | alloc=97.7GB | peak=118.7GB
+step  67/100 | time=14.28s | tokens/s=9,177 | alloc=97.7GB | peak=118.7GB
+step  68/100 | time=14.28s | tokens/s=9,177 | alloc=97.7GB | peak=118.7GB
+step  69/100 | time=14.28s | tokens/s=9,177 | alloc=97.7GB | peak=118.7GB
+step  70/100 | time=14.28s | tokens/s=9,177 | alloc=97.7GB | peak=118.7GB
+step  71/100 | time=14.28s | tokens/s=9,180 | alloc=97.7GB | peak=118.7GB
+step  72/100 | time=14.28s | tokens/s=9,177 | alloc=97.7GB | peak=118.7GB
+step  73/100 | time=14.28s | tokens/s=9,180 | alloc=97.7GB | peak=118.7GB
+step  74/100 | time=14.28s | tokens/s=9,178 | alloc=97.7GB | peak=118.7GB
+step  75/100 | time=14.28s | tokens/s=9,180 | alloc=97.7GB | peak=118.7GB
+step  76/100 | time=14.28s | tokens/s=9,180 | alloc=97.7GB | peak=118.7GB
+step  77/100 | time=14.28s | tokens/s=9,178 | alloc=97.7GB | peak=118.7GB
+step  78/100 | time=14.28s | tokens/s=9,179 | alloc=97.7GB | peak=118.7GB
+step  79/100 | time=14.28s | tokens/s=9,177 | alloc=97.7GB | peak=118.7GB
+step  80/100 | time=14.28s | tokens/s=9,176 | alloc=97.7GB | peak=118.7GB
+step  81/100 | time=14.28s | tokens/s=9,176 | alloc=97.7GB | peak=118.7GB
+step  82/100 | time=14.28s | tokens/s=9,178 | alloc=97.7GB | peak=118.7GB
+step  83/100 | time=14.28s | tokens/s=9,181 | alloc=97.7GB | peak=118.7GB
+step  84/100 | time=14.28s | tokens/s=9,180 | alloc=97.7GB | peak=118.7GB
+step  85/100 | time=14.27s | tokens/s=9,185 | alloc=97.7GB | peak=118.7GB
+step  86/100 | time=14.27s | tokens/s=9,184 | alloc=97.7GB | peak=118.7GB
+step  87/100 | time=14.28s | tokens/s=9,181 | alloc=97.7GB | peak=118.7GB
+step  88/100 | time=14.28s | tokens/s=9,179 | alloc=97.7GB | peak=118.7GB
+step  89/100 | time=14.28s | tokens/s=9,176 | alloc=97.7GB | peak=118.7GB
+step  90/100 | time=14.28s | tokens/s=9,179 | alloc=97.7GB | peak=118.7GB
+step  91/100 | time=14.28s | tokens/s=9,179 | alloc=97.7GB | peak=118.7GB
+step  92/100 | time=14.28s | tokens/s=9,178 | alloc=97.7GB | peak=118.7GB
+step  93/100 | time=14.28s | tokens/s=9,178 | alloc=97.7GB | peak=118.7GB
+step  94/100 | time=14.28s | tokens/s=9,178 | alloc=97.7GB | peak=118.7GB
+step  95/100 | time=14.28s | tokens/s=9,180 | alloc=97.7GB | peak=118.7GB
+step  96/100 | time=14.28s | tokens/s=9,180 | alloc=97.7GB | peak=118.7GB
+step  97/100 | time=14.28s | tokens/s=9,177 | alloc=97.7GB | peak=118.7GB
+step  98/100 | time=14.28s | tokens/s=9,179 | alloc=97.7GB | peak=118.7GB
+step  99/100 | time=14.28s | tokens/s=9,177 | alloc=97.7GB | peak=118.7GB
+step 100/100 | time=14.28s | tokens/s=9,181 | alloc=97.7GB | peak=118.7GB
+
+────────────────────────────────────────────────────────────────
+Results (post-warmup, steps 11–100):
+  Mean step time : 14.27s
+  Mean tokens/s  : 9,182
+  Peak VRAM      : 118.7 GB / 144 GB per GPU
+────────────────────────────────────────────────────────────────
+compgh001:2066546:2070258 [0] NCCL INFO comm 0xaaaaf8abec00 rank 0 nranks 2 cudaDev 0 busId 901000 - Destroy COMPLETE
+compgh001:2066547:2070256 [1] NCCL INFO comm 0xaaab0ac6d570 rank 1 nranks 2 cudaDev 1 busId 1901000 - Destroy COMPLETE
+slurmstepd: error: *** JOB 19699360 ON compgh001 CANCELLED AT 2026-05-25T15:46:01 ***
