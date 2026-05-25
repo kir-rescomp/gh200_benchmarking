@@ -8,7 +8,7 @@
 #SBATCH --gpus-per-task     1
 #SBATCH --cpus-per-task     36
 #SBATCH --mem               40G
-#SBATCH --time              01:00:00
+#SBATCH --time              01:30:00
 #SBATCH --output            slog/%j.out
 
 module purge
@@ -26,6 +26,10 @@ nvidia-smi \
     --query-gpu=timestamp,uuid,utilization.gpu,utilization.memory,memory.used,memory.total,temperature.gpu,power.draw \
     --format=csv,nounits \
     -l 5 >> gpu-stats-${SLURM_JOB_ID}.csv &
+NVIDIA_SMI_PID=$!
+
+# Kill it cleanly on exit (normal or error)
+trap "kill $NVIDIA_SMI_PID 2>/dev/null" EXIT
 
 echo "Job started  : $(date)"
 echo "Node         : $(hostname)"
@@ -38,6 +42,5 @@ torchrun \
     --master_port=$MASTER_PORT \
     fsdp_llm_train.py
 
-wait  # let background nvidima-smi flush
 
 echo "Job finished : $(date)"
