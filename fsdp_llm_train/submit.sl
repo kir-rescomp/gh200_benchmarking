@@ -7,8 +7,8 @@
 #SBATCH --ntasks-per-node   2
 #SBATCH --gpus-per-task     1
 #SBATCH --cpus-per-task     36
-#SBATCH --mem               400G
-#SBATCH --time              03:00:00
+#SBATCH --mem               40G
+#SBATCH --time              01:00:00
 #SBATCH --output            slog/%j.out
 
 module purge
@@ -25,8 +25,7 @@ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 nvidia-smi \
     --query-gpu=timestamp,uuid,utilization.gpu,utilization.memory,memory.used,memory.total,temperature.gpu,power.draw \
     --format=csv,nounits \
-    -l 5 \
-    -f gpu-stats-${SLURM_JOB_ID}.csv &
+    -l 5 >> gpu-stats-${SLURM_JOB_ID}.csv &
 
 echo "Job started  : $(date)"
 echo "Node         : $(hostname)"
@@ -38,5 +37,7 @@ torchrun \
     --master_addr=$MASTER_ADDR \
     --master_port=$MASTER_PORT \
     fsdp_llm_train.py
+
+wait  # let background nvidima-smi flush
 
 echo "Job finished : $(date)"

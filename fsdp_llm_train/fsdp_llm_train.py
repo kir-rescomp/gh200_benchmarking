@@ -29,9 +29,9 @@ from transformers.models.qwen2.modeling_qwen2 import Qwen2DecoderLayer
 # ── Config ───────────────────────────────────────────────────────────────────
 MODEL_NAME   = "/well/kir/mirror/LLM/huggingface/Qwen-Qwen2.5-72B"
 SEQ_LEN      = 8192   # long context — exercises HBM3e bandwidth
-BATCH_SIZE   = 1      # per GPU
-N_STEPS      = 30
-WARMUP_STEPS = 5
+BATCH_SIZE   = 8      # per GPU
+N_STEPS      = 100
+WARMUP_STEPS = 10
 # ─────────────────────────────────────────────────────────────────────────────
 
 
@@ -54,7 +54,7 @@ def main():
     torch.cuda.set_device(device)
 
     rank_print(rank, f"\n{'='*64}")
-    rank_print(rank, f"GH200 Test 1 — FSDP Forward+Backward (no optimizer)")
+    rank_print(rank, f"GH200 Test 1 — FSDP Forward Pass (inference mode)")
     rank_print(rank, f"Model      : {MODEL_NAME}")
     rank_print(rank, f"GPUs       : {world_size}")
     rank_print(rank, f"Seq len    : {SEQ_LEN} | Batch/GPU: {BATCH_SIZE}")
@@ -99,15 +99,15 @@ def main():
     # ── Gradient checkpointing ───────────────────────────────────────────────
     # Recomputes MLP/attention intermediates during backward instead of storing
     # them. Drops activation memory from ~160GB to ~11GB across 80 layers.
-    rank_print(rank, "Applying activation checkpointing ...")
-    apply_activation_checkpointing(
-        model,
-        checkpoint_wrapper_fn=partial(
-            checkpoint_wrapper,
-            checkpoint_impl=CheckpointImpl.NO_REENTRANT,
-        ),
-        check_fn=lambda m: isinstance(m, Qwen2DecoderLayer),
-    )
+    #rank_print(rank, "Applying activation checkpointing ...")
+    #apply_activation_checkpointing(
+    #    model,
+    #    checkpoint_wrapper_fn=partial(
+    #        checkpoint_wrapper,
+    #        checkpoint_impl=CheckpointImpl.NO_REENTRANT,
+    #    ),
+    #    check_fn=lambda m: isinstance(m, Qwen2DecoderLayer),
+    #)
     # ─────────────────────────────────────────────────────────────────────────
 
     rank_print(rank, f"Model ready | {mem_str(device)}\n")
@@ -121,7 +121,7 @@ def main():
 
         t0 = time.perf_counter()
 
-        with torch.no_grad()
+        with torch.no_grad():
             out  = model(input_ids=input_ids, use_cache=False)
 
         torch.cuda.synchronize()
@@ -136,7 +136,7 @@ def main():
             throughputs.append(tps)
 
         rank_print(rank,
-            f"step {step+1:>3}/{N_STEPS} | loss={loss.item():.4f} | "
+            f"step {step+1:>3}/{N_STEPS} | "
             f"time={elapsed:.2f}s | tokens/s={tps:,.0f} | {mem_str(device)}"
         )
 
