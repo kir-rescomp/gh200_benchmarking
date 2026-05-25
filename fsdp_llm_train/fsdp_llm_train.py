@@ -121,17 +121,11 @@ def main():
 
         t0 = time.perf_counter()
 
-        out  = model(input_ids=input_ids, labels=input_ids, use_cache=False)
-        loss = out.loss
-        del out
-        loss.backward()
+        with torch.no_grad()
+            out  = model(input_ids=input_ids, use_cache=False)
 
         torch.cuda.synchronize()
         t1 = time.perf_counter()
-
-        # No optimizer — clear grads manually
-        for p in model.parameters():
-            p.grad = None
 
         elapsed = t1 - t0
         tokens  = BATCH_SIZE * SEQ_LEN * world_size
