@@ -123,6 +123,7 @@ def main():
 
         out  = model(input_ids=input_ids, labels=input_ids, use_cache=False)
         loss = out.loss
+        del out
         loss.backward()
 
         torch.cuda.synchronize()
