@@ -19,6 +19,7 @@ source /well/kir/scratch/sansom/mat611/Github/gh200_benchmarking/uv/.venv/bin/ac
 export MASTER_ADDR=$(scontrol show hostname $SLURM_NODELIST | head -n 1)
 export MASTER_PORT=29600
 export NCCL_DEBUG=INFO
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 # Collect GPU stats in background throughout the job
 nvidia-smi \
