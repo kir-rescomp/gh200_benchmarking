@@ -69,19 +69,28 @@ adata = sc.read_10x_h5(DATA_PATH)
 adata.var_names_make_unique()
 print(f"  loaded: {adata.shape[0]:,} cells x {adata.shape[1]:,} genes")
 
+# Use the following sub-sampling for a smoke test
+# sc.pp.subsample(adata, n_obs=100_000, random_state=0)
+
 # ── 2. move the whole matrix onto the GPU and keep it there ──────────────────
 with stage("to_GPU"):
     rsc.get.anndata_to_GPU(adata)   # X now lives in HBM3e for the whole run
 
 # ── 3. QC + basic filtering ──────────────────────────────────────────────────
+# ── 3. QC + basic filtering ──────────────────────────────────────────────────
 with stage("QC_filter"):
     rsc.pp.flag_gene_family(adata, gene_family_name="MT", gene_family_prefix="mt-")
     rsc.pp.calculate_qc_metrics(adata, qc_vars=["MT"])
-    # light filtering — keep it biologically sensible, not aggressive
-    sc.pp.filter_genes(adata, min_cells=3)
-    adata = adata[adata.obs["n_genes_by_counts"] > 200].copy()
+
+    n_mt = int(adata.var["MT"].sum())
+    print(f"  flagged {n_mt} mitochondrial genes", flush=True)
+
+    rsc.pp.filter_genes(adata, min_cells=3)      # genes detected in >=3 cells
+    rsc.pp.filter_cells(adata, min_counts=200)   # cells with >=200 total counts
+
     adata = adata[adata.obs["pct_counts_MT"] < 20].copy()
-    print(f"  after QC: {adata.shape[0]:,} cells x {adata.shape[1]:,} genes")
+    print(f"  after QC: {adata.shape[0]:,} cells x {adata.shape[1]:,} genes", flush=True)
+
 
 # keep raw counts for marker logreg later
 adata.layers["counts"] = adata.X.copy()
@@ -109,28 +118,32 @@ with stage("neighbors_kNN"):
 
 # ── 8. UMAP embedding ────────────────────────────────────────────────────────
 with stage("UMAP"):
-    rsc.tl.umap(adata, min_dist=0.3)
+    rsc.tl.umap(adata, min_dist=0.3, maxiter=200)
 
-# ── 9. Leiden clustering ─────────────────────────────────────────────────────
+# ── 9. Move to CPU for clustering + markers ──────────────────────────────────
+# Heavy GPU work (PCA, kNN, UMAP) is done. The neighbour graph rsc built lives
+# in adata.obsp["connectivities"]; clustering on it is light. Transfer now.
+with stage("to_CPU"):
+    rsc.get.anndata_to_CPU(adata)
+
+# ── 10. Leiden clustering (CPU igraph on the GPU-built graph) ─────────────────
 with stage("Leiden"):
-    rsc.tl.leiden(adata, resolution=1.0, key_added="leiden")
+    import scanpy as sc
+    sc.tl.leiden(adata, resolution=1.0, key_added="leiden",
+                 flavor="igraph", n_iterations=10, directed=False)
     n_clusters = adata.obs["leiden"].nunique()
-    print(f"  Leiden found {n_clusters} clusters")
+    print(f"  Leiden found {n_clusters} clusters", flush=True)
 
-# ── 10. marker genes per cluster (GPU logistic regression) ───────────────────
+# ── 11. Marker genes per cluster (CPU logistic regression) ───────────────────
 with stage("markers_logreg"):
-    rsc.tl.rank_genes_groups_logreg(adata, groupby="leiden", use_raw=True)
+    sc.tl.rank_genes_groups(adata, groupby="leiden", method="logreg",
+                            use_raw=True)
 
 # ── persist results ──────────────────────────────────────────────────────────
-print("\nWriting outputs...")
-
-# bring back to CPU for saving / plotting
-rsc.get.anndata_to_CPU(adata)
+print("\nWriting outputs...", flush=True)
 adata.write("gh200_results.h5ad")
 
 pd.DataFrame(timings).to_csv("gh200_timings.csv", index=False)
-
-# top 10 markers per cluster
 marker_tbl = sc.get.rank_genes_groups_df(adata, group=None)
 marker_tbl.to_csv("gh200_markers.csv", index=False)
 
