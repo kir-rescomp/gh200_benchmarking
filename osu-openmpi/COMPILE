@@ -8,3 +8,4 @@ export LD_LIBRARY_PATH=/usr/local/cuda/lib64/:$LD_LIBRARY_PATH
          CPPFLAGS="-I/usr/local/cuda/include"
 
 make -j ${SLURM_CPUS_PER_TASK}
+make install
