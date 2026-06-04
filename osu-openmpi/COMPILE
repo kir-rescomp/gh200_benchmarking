@@ -2,7 +2,9 @@
 wget -c https://mvapich.cse.ohio-state.edu/download/mvapich/osu-micro-benchmarks-7.5.2.tar.gz
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64/:$LD_LIBRARY_PATH
 
-./configure CC=mpicc CXX=mpicxx \   
+./configure CC=mpicc CXX=mpicxx --prefix=$PWD/install \   
 	--enable-cuda --with-cuda=/usr/local/cuda \  
 	 LDFLAGS="-L/usr/local/cuda/lib64 -Wl,-rpath,/usr/local/cuda/lib64" \ 
-          CPPFLAGS="-I/usr/local/cuda/include"
+         CPPFLAGS="-I/usr/local/cuda/include"
+
+make -j ${SLURM_CPUS_PER_TASK}
