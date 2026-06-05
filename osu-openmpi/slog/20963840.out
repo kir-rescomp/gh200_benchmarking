@@ -1,0 +1,59 @@
+[1780674050.325550] [compgh008:3481736:0]     ucp_context.c:1263 UCX  WARN  network device 'mlx5_3:1' is not available, please use one or more of: 'enP18s18f0np0'(tcp), 'ib-bond0'(tcp), 'lo'(tcp), 'mlx5_0:1'(ib), 'mlx5_1:1'(ib), 'mlx5_2:1'(ib)
+[1780674050.325561] [compgh008:3481736:0]     ucp_context.c:1263 UCX  WARN  transports 'cuda_copy','cuda_ipc','gdr_copy' are not available, please use one or more of: dc, dc_mlx5, dc_x, ib, mm, posix, rc, rc_mlx5, rc_v, rc_verbs, rc_x, self, shm, sm, sysv, tcp, ud, ud_mlx5, ud_v, ud_verbs, ud_x
+
+# OSU MPI-CUDA Allreduce Latency Test v7.5.2
+# Datatype: MPI_INT.
+# Size       Avg Latency(us)
+[1780674050.486931] [compgh009:3475708:0]     ucp_context.c:1263 UCX  WARN  network device 'mlx5_3:1' is not available, please use one or more of: 'enP18s18f0np0'(tcp), 'ib-bond0'(tcp), 'lo'(tcp), 'mlx5_0:1'(ib), 'mlx5_1:1'(ib), 'mlx5_2:1'(ib)
+[1780674050.486943] [compgh009:3475708:0]     ucp_context.c:1263 UCX  WARN  transports 'cuda_copy','cuda_ipc','gdr_copy' are not available, please use one or more of: dc, dc_mlx5, dc_x, ib, mm, posix, rc, rc_mlx5, rc_v, rc_verbs, rc_x, self, shm, sm, sysv, tcp, ud, ud_mlx5, ud_v, ud_verbs, ud_x
+4                      28.65
+8                      27.82
+16                     27.56
+32                     27.37
+64                     28.08
+128                    28.63
+256                    29.38
+512                    29.72
+1024                   29.81
+2048                   31.41
+4096                   36.01
+8192                   36.07
+16384                  40.02
+32768                  47.35
+65536                  59.04
+131072                 76.50
+262144                116.28
+524288                156.00
+1048576               251.87
+[1780674054.601533] [compgh009:3475765:0]     ucp_context.c:1263 UCX  WARN  network device 'mlx5_3:1' is not available, please use one or more of: 'enP18s18f0np0'(tcp), 'ib-bond0'(tcp), 'lo'(tcp), 'mlx5_0:1'(ib), 'mlx5_1:1'(ib), 'mlx5_2:1'(ib)
+[1780674054.601545] [compgh009:3475765:0]     ucp_context.c:1263 UCX  WARN  transports 'cuda_copy','cuda_ipc','gdr_copy' are not available, please use one or more of: dc, dc_mlx5, dc_x, ib, mm, posix, rc, rc_mlx5, rc_v, rc_verbs, rc_x, self, shm, sm, sysv, tcp, ud, ud_mlx5, ud_v, ud_verbs, ud_x
+[1780674054.605845] [compgh008:3481807:0]     ucp_context.c:1263 UCX  WARN  network device 'mlx5_3:1' is not available, please use one or more of: 'enP18s18f0np0'(tcp), 'ib-bond0'(tcp), 'lo'(tcp), 'mlx5_0:1'(ib), 'mlx5_1:1'(ib), 'mlx5_2:1'(ib)
+[1780674054.605857] [compgh008:3481807:0]     ucp_context.c:1263 UCX  WARN  transports 'cuda_copy','cuda_ipc','gdr_copy' are not available, please use one or more of: dc, dc_mlx5, dc_x, ib, mm, posix, rc, rc_mlx5, rc_v, rc_verbs, rc_x, self, shm, sm, sysv, tcp, ud, ud_mlx5, ud_v, ud_verbs, ud_x
+
+# OSU MPI-CUDA Bandwidth Test v7.5.2
+# Datatype: MPI_CHAR.
+# Size      Bandwidth (MB/s)
+1                       1.58
+2                       3.16
+4                       6.44
+8                      12.96
+16                     25.79
+32                     51.57
+64                    100.26
+128                   202.12
+256                   212.71
+512                   431.10
+1024                  869.19
+2048                 1707.36
+4096                 3426.66
+8192                 6879.90
+16384               12363.19
+32768               19478.10
+65536               38161.14
+131072              45629.55
+262144              47681.86
+524288              48543.51
+1048576             48964.29
+2097152             46267.93
+4194304             49267.06
+srun: error: Unable to create step for job 20963840: More processors requested than permitted
