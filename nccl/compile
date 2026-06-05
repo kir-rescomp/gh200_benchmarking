@@ -1,0 +1,7 @@
+
+export PATH=/apps/kir/eb/hpc-utils/aarch64:$PATH
+export PYTHONNOUSERSITE=1
+module use /apps/eb/el9/2025a/aarch64/modules/all/
+
+module purge
+module load OpenMPI/5.0.7-GCC-14.2.0 NCCL/2.27.7-GCCcore-14.2.0-CUDA-12.8.0
