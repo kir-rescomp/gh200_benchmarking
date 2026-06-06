@@ -1,13 +1,14 @@
 #!/bin/bash
 
-#SBATCH --job-name      nccl_gh200
-#SBATCH --partition     gpu_gh200_144gb
-#SBATCH --account       gpu_kir.prj
-#SBATCH --nodes         2
-#SBATCH --cpus-per-task 72
-#SBATCH --gpus-per-node 2
-#SBATCH --time          01:00:00
-#SBATCH --output        slog/%j.out
+#SBATCH --job-name        nccl_gh200
+#SBATCH --partition       gpu_gh200_144gb
+#SBATCH --account         gpu_kir.prj
+#SBATCH --nodes           4
+#SBATCH --ntasks-per-node 2
+#SBATCH --cpus-per-task   1
+#SBATCH --gpus-per-node   2
+#SBATCH --time            10:00:00
+#SBATCH --output          slog/%j.out
 
 export PATH=/apps/kir/eb/hpc-utils/aarch64:$PATH
 export PYTHONNOUSERSITE=1
@@ -30,7 +31,7 @@ srun --gpu-bind=closest $BIN/all_reduce_perf \
   -b 1G \
   -e 128G \
   -f 2 \
-  -n 100000 \
-  -w 100 \
+  -n 10000 \
+  -w 50 \
   -d float \
   -o sum

@@ -1,0 +1,608 @@
+[1780751720.547641] [compgh009:3603956:0]        ib_iface.c:1182 UCX  ERROR mlx5_0: iface 0x1a956e30 failed to create UD QP TX wr:256 sge:6 inl:64 resp:0 RX wr:4096 sge:1 resp:0 failed: Cannot allocate memory
+[1780751720.547669] [compgh009:3603987:0]        ib_iface.c:1182 UCX  ERROR mlx5_0: iface 0x37dc6e30 failed to create UD QP TX wr:256 sge:6 inl:64 resp:0 RX wr:4096 sge:1 resp:0 failed: Cannot allocate memory
+[1780751720.548685] [compgh009:3603987:0]         dc_mlx5.c:1487 UCX  ERROR mlx5_0: mlx5dv_create_qp(DCI) failed: Cannot allocate memory
+[1780751720.548733] [compgh009:3603956:0]         dc_mlx5.c:1487 UCX  ERROR mlx5_0: mlx5dv_create_qp(DCI) failed: Cannot allocate memory
+[1780751720.550685] [compgh009:3603987:0]         ud_mlx5.c:950  UCX  ERROR mlx5_0: md 0x37d57840 failed to create UD QP TX wr:128 sge:2 inl:0 RX wr:128 sge:1: Cannot allocate memory
+[1780751720.550716] [compgh009:3603956:0]         ud_mlx5.c:950  UCX  ERROR mlx5_0: md 0x1a8e7840 failed to create UD QP TX wr:128 sge:2 inl:0 RX wr:128 sge:1: Cannot allocate memory
+[1780751720.585713] [compgh009:3603952:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.586069] [compgh009:3603952:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.586164] [compgh009:3603952:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.621816] [compgh009:3603976:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.622159] [compgh009:3603976:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.622255] [compgh009:3603976:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.641133] [compgh009:3603947:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.641501] [compgh009:3603947:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.641575] [compgh009:3603947:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.661047] [compgh009:3603967:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.661371] [compgh009:3603967:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.661444] [compgh009:3603967:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.677099] [compgh009:3603951:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.677450] [compgh009:3603951:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.677524] [compgh009:3603951:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.688629] [compgh009:3603943:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.688960] [compgh009:3603943:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.689036] [compgh009:3603943:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.719919] [compgh009:3603939:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.720266] [compgh009:3603939:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.720340] [compgh009:3603939:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.727862] [compgh009:3603937:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.728175] [compgh009:3603937:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.728251] [compgh009:3603937:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.729580] [compgh009:3603992:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.729902] [compgh009:3603992:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.729975] [compgh009:3603992:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.733354] [compgh009:3603935:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.733670] [compgh009:3603935:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.733746] [compgh009:3603935:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.737024] [compgh009:3603933:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.737354] [compgh009:3603933:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.737432] [compgh009:3603933:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.763481] [compgh009:3603965:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.763481] [compgh009:3603973:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.763854] [compgh009:3603965:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.763855] [compgh009:3603973:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.763932] [compgh009:3603965:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.763934] [compgh009:3603973:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.776872] [compgh009:3603959:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.777207] [compgh009:3603959:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.777280] [compgh009:3603959:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.797491] [compgh009:3603961:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.797852] [compgh009:3603961:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.797927] [compgh009:3603961:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.828091] [compgh009:3603988:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.828432] [compgh009:3603988:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.828508] [compgh009:3603988:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.837130] [compgh009:3603975:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.837443] [compgh009:3603975:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.837521] [compgh009:3603975:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.841558] [compgh009:3603955:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.841872] [compgh009:3603955:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.841944] [compgh009:3603955:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.844595] [compgh009:3603957:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.844955] [compgh009:3603957:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.845029] [compgh009:3603957:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.846008] [compgh009:3603998:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.846366] [compgh009:3603998:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.846442] [compgh009:3603998:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.847463] [compgh009:3603986:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.847798] [compgh009:3603986:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.847871] [compgh009:3603986:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.850063] [compgh009:3604000:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.850400] [compgh009:3604000:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.850475] [compgh009:3604000:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.851710] [compgh009:3603953:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.851840] [compgh009:3603977:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.852064] [compgh009:3603953:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.852146] [compgh009:3603953:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.852175] [compgh009:3603977:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.852179] [compgh009:3604002:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.852251] [compgh009:3603977:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.852345] [compgh009:3603981:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.852439] [compgh009:3603984:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751720.852548] [compgh009:3604002:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.852626] [compgh009:3604002:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.852703] [compgh009:3603981:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.852787] [compgh009:3603981:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751720.852815] [compgh009:3603984:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751720.852910] [compgh009:3603984:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.260585] [compgh008:3611378:0]        ib_iface.c:1182 UCX  ERROR mlx5_0: iface 0x11d3d250 failed to create UD QP TX wr:256 sge:6 inl:64 resp:0 RX wr:4096 sge:1 resp:0 failed: Cannot allocate memory
+[1780751721.260572] [compgh008:3611380:0]        ib_iface.c:1182 UCX  ERROR mlx5_0: iface 0x2c18d250 failed to create UD QP TX wr:256 sge:6 inl:64 resp:0 RX wr:4096 sge:1 resp:0 failed: Cannot allocate memory
+[1780751721.261595] [compgh008:3611380:0]         dc_mlx5.c:1487 UCX  ERROR mlx5_0: mlx5dv_create_qp(DCI) failed: Cannot allocate memory
+[1780751721.261631] [compgh008:3611378:0]         dc_mlx5.c:1487 UCX  ERROR mlx5_0: mlx5dv_create_qp(DCI) failed: Cannot allocate memory
+[1780751721.264332] [compgh008:3611380:0]         ud_mlx5.c:950  UCX  ERROR mlx5_0: md 0x2c178fd0 failed to create UD QP TX wr:128 sge:2 inl:0 RX wr:128 sge:1: Cannot allocate memory
+[1780751721.264422] [compgh008:3611378:0]         ud_mlx5.c:950  UCX  ERROR mlx5_0: md 0x11d28fd0 failed to create UD QP TX wr:128 sge:2 inl:0 RX wr:128 sge:1: Cannot allocate memory
+[1780751721.269796] [compgh008:3611360:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.269813] [compgh008:3611362:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.270150] [compgh008:3611360:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.270149] [compgh008:3611362:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.270225] [compgh008:3611360:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.270226] [compgh008:3611362:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.365793] [compgh008:3611421:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.366125] [compgh008:3611421:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.366200] [compgh008:3611421:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.391933] [compgh008:3611358:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.392314] [compgh008:3611358:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.392409] [compgh008:3611358:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.394904] [compgh008:3611393:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.395218] [compgh008:3611393:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.395294] [compgh008:3611393:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.410815] [compgh008:3611373:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.411152] [compgh008:3611373:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.411227] [compgh008:3611373:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.412573] [compgh008:3611417:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.412892] [compgh008:3611417:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.412966] [compgh008:3611417:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.413169] [compgh008:3611354:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.413669] [compgh008:3611354:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.413776] [compgh008:3611354:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.414223] [compgh008:3611425:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.414534] [compgh008:3611425:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.414613] [compgh008:3611425:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.448934] [compgh008:3611397:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.449262] [compgh008:3611397:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.449336] [compgh008:3611397:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.475002] [compgh008:3611389:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.475327] [compgh008:3611389:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.475401] [compgh008:3611389:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.497299] [compgh008:3611391:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.497613] [compgh008:3611391:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.497689] [compgh008:3611391:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.505760] [compgh008:3611413:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.506067] [compgh008:3611413:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.506140] [compgh008:3611413:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.511375] [compgh008:3611411:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.511669] [compgh008:3611411:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.511739] [compgh008:3611411:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.536059] [compgh008:3611407:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.536399] [compgh008:3611407:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.536472] [compgh008:3611407:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.546130] [compgh008:3611369:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.546444] [compgh008:3611369:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.546516] [compgh008:3611369:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.550807] [compgh008:3611385:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.550843] [compgh008:3611387:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.551128] [compgh008:3611385:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.551149] [compgh008:3611387:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.551203] [compgh008:3611385:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.551223] [compgh008:3611387:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.553218] [compgh008:3611383:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.553564] [compgh008:3611383:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.553638] [compgh008:3611383:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.555633] [compgh008:3611363:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.555947] [compgh008:3611363:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.556027] [compgh008:3611363:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.558019] [compgh008:3611403:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.558329] [compgh008:3611403:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.558405] [compgh008:3611403:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.562912] [compgh008:3611361:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.563312] [compgh008:3611361:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.563394] [compgh008:3611361:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.563853] [compgh008:3611359:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.564179] [compgh008:3611359:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.564255] [compgh008:3611359:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.568064] [compgh008:3611377:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.568384] [compgh008:3611377:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.568460] [compgh008:3611377:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.569158] [compgh008:3611399:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.569188] [compgh008:3611355:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.569243] [compgh008:3611375:0]        ib_iface.c:1230 UCX  ERROR mlx5_0: ibv_create_cq(cqe=256) failed: Invalid argument
+[1780751721.569503] [compgh008:3611399:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.569539] [compgh008:3611355:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.569582] [compgh008:3611375:0]         ib_mlx5.c:127  UCX  ERROR mlx5_0: mlx5dv_create_cq(cqe=4096) failed: Invalid argument
+[1780751721.569583] [compgh008:3611399:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.569618] [compgh008:3611355:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+[1780751721.569657] [compgh008:3611375:0]         ud_mlx5.c:927  UCX  ERROR mlx5_0: ibv_create_cq() failed: Invalid argument
+# nccl-tests version 2.18.3 nccl-headers=22707 nccl-library=22707
+# Collective test starting: all_reduce_perf
+# nThread 1 nGpus 1 minBytes 1073741824 maxBytes 137438953472 step: 2(factor) warmup iters: 100 iters: 100000 agg iters: 1 validation: 1 graph: 0 unalign: 0
+#
+# Using devices
+ .. compgh008 pid 3611424: Test failure common.cu:1218
+Invalid number of GPUs: 71 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603989: Test failure common.cu:1218
+Invalid number of GPUs: 57 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+Invalid number of GPUs: 5 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603936: Test failure common.cu:1218
+Invalid number of GPUs: 49 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603980: Test failure common.cu:1218
+Invalid number of GPUs: 15 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611368: Test failure common.cu:1218
+Invalid number of GPUs: 18 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611371: Test failure common.cu:1218
+Invalid number of GPUs: 31 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611384: Test failure common.cu:1218
+Invalid number of GPUs: 65 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611418: Test failure common.cu:1218
+Invalid number of GPUs: 48 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611401: Test failure common.cu:1218
+Invalid number of GPUs: 24 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611377: Test failure common.cu:1218
+Invalid number of GPUs: 4 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611357: Test failure common.cu:1218
+Invalid number of GPUs: 27 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611380: Test failure common.cu:1218
+Invalid number of GPUs: 11 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611364: Test failure common.cu:1218
+Invalid number of GPUs: 70 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611423: Test failure common.cu:1218
+Invalid number of GPUs: 57 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611410: Test failure common.cu:1218
+Invalid number of GPUs: 46 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611399: Test failure common.cu:1218
+Invalid number of GPUs: 69 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611422: Test failure common.cu:1218
+Invalid number of GPUs: 20 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603951: Test failure common.cu:1218
+Invalid number of GPUs: 35 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611388: Test failure common.cu:1218
+Invalid number of GPUs: 43 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611396: Test failure common.cu:1218
+Invalid number of GPUs: 50 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611403: Test failure common.cu:1218
+Invalid number of GPUs: 41 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611394: Test failure common.cu:1218
+Invalid number of GPUs: 3 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611356: Test failure common.cu:1218
+Invalid number of GPUs: 8 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611361: Test failure common.cu:1218
+Invalid number of GPUs: 68 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611421: Test failure common.cu:1218
+Invalid number of GPUs: 19 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611372: Test failure common.cu:1218
+Invalid number of GPUs: 45 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611398: Test failure common.cu:1218
+Invalid number of GPUs: 21 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603952: Test failure common.cu:1218
+Invalid number of GPUs: 67 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603999: Test failure common.cu:1218
+Invalid number of GPUs: 15 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603946: Test failure common.cu:1218
+Invalid number of GPUs: 23 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611376: Test failure common.cu:1218
+Invalid number of GPUs: 33 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611386: Test failure common.cu:1218
+Invalid number of GPUs: 5 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611358: Test failure common.cu:1218
+Invalid number of GPUs: 72 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611425: Test failure common.cu:1218
+Invalid number of GPUs: 39 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611392: Test failure common.cu:1218
+Invalid number of GPUs: 9 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611362: Test failure common.cu:1218
+Invalid number of GPUs: 49 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611402: Test failure common.cu:1218
+Invalid number of GPUs: 51 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611404: Test failure common.cu:1218
+Invalid number of GPUs: 40 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611393: Test failure common.cu:1218
+Invalid number of GPUs: 55 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611408: Test failure common.cu:1218
+Invalid number of GPUs: 54 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611407: Test failure common.cu:1218
+Invalid number of GPUs: 63 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611416: Test failure common.cu:1218
+Invalid number of GPUs: 28 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611381: Test failure common.cu:1218
+Invalid number of GPUs: 32 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603963: Test failure common.cu:1218
+Invalid number of GPUs: 32 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611385: Test failure common.cu:1218
+ .. compgh008 pid 3611413: Test failure common.cu:1218
+Invalid number of GPUs: 60 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+Invalid number of GPUs: 27 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603958: Test failure common.cu:1218
+Invalid number of GPUs: 66 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603998: Test failure common.cu:1218
+Invalid number of GPUs: 4 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603935: Test failure common.cu:1218
+Invalid number of GPUs: 67 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611420: Test failure common.cu:1218
+Invalid number of GPUs: 38 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603969: Test failure common.cu:1218
+Invalid number of GPUs: 29 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611382: Test failure common.cu:1218
+Invalid number of GPUs: 34 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603965: Test failure common.cu:1218
+Invalid number of GPUs: 12 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611365: Test failure common.cu:1218
+Invalid number of GPUs: 33 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603964: Test failure common.cu:1218
+Invalid number of GPUs: 69 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3604001: Test failure common.cu:1218
+Invalid number of GPUs: 30 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603961: Test failure common.cu:1218
+Invalid number of GPUs: 18 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603949: Test failure common.cu:1218
+Invalid number of GPUs: 41 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603972: Test failure common.cu:1218
+Invalid number of GPUs: 42 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603973: Test failure common.cu:1218
+Invalid number of GPUs: 3 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603934: Test failure common.cu:1218
+Invalid number of GPUs: 60 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603992: Test failure common.cu:1218
+Invalid number of GPUs: 13 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603944: Test failure common.cu:1218
+Invalid number of GPUs: 42 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611395: Test failure common.cu:1218
+Invalid number of GPUs: 36 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603967: Test failure common.cu:1218
+Invalid number of GPUs: 16 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603947: Test failure common.cu:1218
+Invalid number of GPUs: 51 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603982: Test failure common.cu:1218
+Invalid number of GPUs: 6 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611359: Test failure common.cu:1218
+Invalid number of GPUs: 29 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603960: Test failure common.cu:1218
+Invalid number of GPUs: 13 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611366: Test failure common.cu:1218
+Invalid number of GPUs: 59 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603991: Test failure common.cu:1218
+Invalid number of GPUs: 58 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611411: Test failure common.cu:1218
+Invalid number of GPUs: 61 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603993: Test failure common.cu:1218
+Invalid number of GPUs: 54 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603986: Test failure common.cu:1218
+Invalid number of GPUs: 10 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611363: Test failure common.cu:1218
+Invalid number of GPUs: 50 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603981: Test failure common.cu:1218
+Invalid number of GPUs: 52 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611405: Test failure common.cu:1218
+Invalid number of GPUs: 56 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603988: Test failure common.cu:1218
+Invalid number of GPUs: 48 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603979: Test failure common.cu:1218
+Invalid number of GPUs: 58 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603990: Test failure common.cu:1218
+Invalid number of GPUs: 31 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603962: Test failure common.cu:1218
+ .. compgh009 pid 3603956: Test failure common.cu:1218
+Invalid number of GPUs: 25 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+Invalid number of GPUs: 11 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603942: Test failure common.cu:1218
+Invalid number of GPUs: 61 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611414: Test failure common.cu:1218
+Invalid number of GPUs: 47 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611400: Test failure common.cu:1218
+Invalid number of GPUs: 59 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611412: Test failure common.cu:1218
+Invalid number of GPUs: 25 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611378: Test failure common.cu:1218
+Invalid number of GPUs: 34 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611387: Test failure common.cu:1218
+ .. compgh008 pid 3611417: Test failure common.cu:1218
+Invalid number of GPUs: 64 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+Invalid number of GPUs: 66 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611419: Test failure common.cu:1218
+Invalid number of GPUs: 26 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611379: Test failure common.cu:1218
+Invalid number of GPUs: 38 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611391: Test failure common.cu:1218
+Invalid number of GPUs: 30 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611383: Test failure common.cu:1218
+Invalid number of GPUs: 22 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611375: Test failure common.cu:1218
+Invalid number of GPUs: 56 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611409: Test failure common.cu:1218
+Invalid number of GPUs: 62 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603994: Test failure common.cu:1218
+Invalid number of GPUs: 37 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611390: Test failure common.cu:1218
+Invalid number of GPUs: 47 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603978: Test failure common.cu:1218
+Invalid number of GPUs: 16 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611369: Test failure common.cu:1218
+Invalid number of GPUs: 71 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3604003: Test failure common.cu:1218
+ .. compgh008 pid 3611415: Test failure common.cu:1218
+Invalid number of GPUs: 62 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611406: Test failure common.cu:1218
+Invalid number of GPUs: 53 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+Invalid number of GPUs: 17 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611370: Test failure common.cu:1218
+ .. compgh008 pid 3611389: Test failure common.cu:1218
+Invalid number of GPUs: 36 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611397: Test failure common.cu:1218
+Invalid number of GPUs: 44 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+Invalid number of GPUs: 7 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611360: Test failure common.cu:1218
+ .. compgh009 pid 3603966: Test failure common.cu:1218
+Invalid number of GPUs: 35 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+Invalid number of GPUs: 23 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603954: Test failure common.cu:1218
+Invalid number of GPUs: 21 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611374: Test failure common.cu:1218
+ .. compgh009 pid 3603937: Test failure common.cu:1218
+Invalid number of GPUs: 14 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611367: Test failure common.cu:1218
+Invalid number of GPUs: 6 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+Invalid number of GPUs: 26 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603957: Test failure common.cu:1218
+Invalid number of GPUs: 20 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh008 pid 3611373: Test failure common.cu:1218
+Invalid number of GPUs: 12 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603943: Test failure common.cu:1218
+ .. compgh009 pid 3603948: Test failure common.cu:1218
+Invalid number of GPUs: 17 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+Invalid number of GPUs: 63 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603995: Test failure common.cu:1218
+ .. compgh009 pid 3603959: Test failure common.cu:1218
+Invalid number of GPUs: 28 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+Invalid number of GPUs: 40 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603971: Test failure common.cu:1218
+Invalid number of GPUs: 72 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3604004: Test failure common.cu:1218
+Invalid number of GPUs: 70 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3604002: Test failure common.cu:1218
+Invalid number of GPUs: 7 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603938: Test failure common.cu:1218
+Invalid number of GPUs: 46 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603977: Test failure common.cu:1218
+Invalid number of GPUs: 45 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603976: Test failure common.cu:1218
+Invalid number of GPUs: 44 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603975: Test failure common.cu:1218
+Invalid number of GPUs: 68 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3604000: Test failure common.cu:1218
+Invalid number of GPUs: 43 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603974: Test failure common.cu:1218
+Invalid number of GPUs: 22 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603953: Test failure common.cu:1218
+ .. compgh009 pid 3603941: Test failure common.cu:1218
+Invalid number of GPUs: 10 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603985: Test failure common.cu:1218
+Invalid number of GPUs: 53 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+Invalid number of GPUs: 64 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603996: Test failure common.cu:1218
+Invalid number of GPUs: 39 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603970: Test failure common.cu:1218
+Invalid number of GPUs: 8 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603939: Test failure common.cu:1218
+Invalid number of GPUs: 52 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603984: Test failure common.cu:1218
+ .. compgh009 pid 3603950: Test failure common.cu:1218
+Invalid number of GPUs: 19 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+Invalid number of GPUs: 37 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603968: Test failure common.cu:1218
+Invalid number of GPUs: 55 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603987: Test failure common.cu:1218
+Invalid number of GPUs: 9 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603940: Test failure common.cu:1218
+Invalid number of GPUs: 24 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603955: Test failure common.cu:1218
+Invalid number of GPUs: 14 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603945: Test failure common.cu:1218
+Invalid number of GPUs: 65 requested but only 2 were found.
+Please check the number of processes and GPUs per process.
+ .. compgh009 pid 3603997: Test failure common.cu:1218
+slurmstepd: error:  mpi/pmix_v4: _errhandler: compgh009 [1]: pmixp_client_v2.c:211: Error handler invoked: status = -61, source = [slurm.pmix.21002650.0:128]
+slurmstepd: error: *** STEP 21002650.0 ON compgh008 CANCELLED AT 2026-06-06T14:15:23 ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: --task-epilog failed status=9
+slurmstepd: error: --task-epilog failed status=9
+srun: error: compgh009: tasks 72-73: Killed
+srun: error: compgh009: tasks 74-143: Exited with exit code 5
+srun: error: compgh008: tasks 0-1: Killed
+srun: error: compgh008: tasks 2-71: Exited with exit code 5
