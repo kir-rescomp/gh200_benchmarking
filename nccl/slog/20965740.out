@@ -1,0 +1,25 @@
+srun: warning: can't run 1 processes on 2 nodes, setting nnodes to 1
+# nccl-tests version 2.18.3 nccl-headers=22707 nccl-library=22707
+# Collective test starting: all_reduce_perf
+# nThread 1 nGpus 1 minBytes 1073741824 maxBytes 137438953472 step: 2(factor) warmup iters: 10 iters: 100 agg iters: 1 validation: 1 graph: 0 unalign: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 3488459 on  compgh008 device  0 [0009:01:00] NVIDIA GH200 144G HBM3e
+#
+# Reducing maxBytes to 49213166933 due to memory limitation
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+  1073741824     268435456     float     sum      -1   495.86  2165.4    0.00       0     0.10   1e+07    0.00       0
+  2147483648     536870912     float     sum      -1   985.88  2178.2    0.00       0     0.12   2e+07    0.00       0
+  4294967296    1073741824     float     sum      -1  1966.06  2184.6    0.00       0     0.27   2e+07    0.00       0
+  8589934592    2147483648     float     sum      -1  3925.97  2188.0    0.00       0     0.14   6e+07    0.00       0
+ 17179869184    4294967296     float     sum      -1  7845.72  2189.7    0.00       0     0.23   8e+07    0.00       0
+ 34359738368    8589934592     float     sum      -1  15692.9  2189.5    0.00       0     0.15   2e+08    0.00       0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0 
+#
+# Collective test concluded: all_reduce_perf
+#
+
