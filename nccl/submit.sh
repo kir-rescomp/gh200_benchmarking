@@ -26,6 +26,10 @@ BIN=/gpfs3/well/kir-scratch/sansom/mat611/GH200_benchmarking/nccl-tests/build
 # Each gets 100 iterations with 10 warmup. 128GB is close to the per-GPU HBM limit (143GB)
 # so it'll push the memory hard. If 128GB OOMs drop -e to 64G.
 
+# Below is to squeeze more out of the IB-peak
+export NCCL_IB_HCA=mlx5_0,mlx5_1
+export NCCL_NET_GDR_LEVEL=5
+
 
 srun --gpu-bind=closest $BIN/all_reduce_perf \
   -b 1G \
