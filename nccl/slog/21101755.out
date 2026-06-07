@@ -18,3 +18,4 @@
 #       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
 #        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
   1073741824     268435456     float     sum      -1  46572.8   23.06   40.35       0  46449.4   23.12   40.45       0
+  2147483648     536870912     float     sum      -1  92752.3   23.15   40.52       0  92743.9   23.15   40.52       0
