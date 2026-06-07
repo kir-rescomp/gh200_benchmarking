@@ -1,0 +1,20 @@
+# nccl-tests version 2.18.3 nccl-headers=22707 nccl-library=22707
+# Collective test starting: all_reduce_perf
+# nThread 1 nGpus 1 minBytes 1073741824 maxBytes 137438953472 step: 2(factor) warmup iters: 10 iters: 1000 agg iters: 1 validation: 1 graph: 0 unalign: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 1529381 on  compgh000 device  0 [0009:01:00] NVIDIA GH200 144G HBM3e
+#  Rank  1 Group  0 Pid 1529382 on  compgh000 device  1 [0019:01:00] NVIDIA GH200 144G HBM3e
+#  Rank  2 Group  0 Pid 4159091 on  compgh001 device  0 [0009:01:00] NVIDIA GH200 144G HBM3e
+#  Rank  3 Group  0 Pid 4159092 on  compgh001 device  1 [0019:01:00] NVIDIA GH200 144G HBM3e
+#  Rank  4 Group  0 Pid 3873292 on  compgh002 device  0 [0009:01:00] NVIDIA GH200 144G HBM3e
+#  Rank  5 Group  0 Pid 3873293 on  compgh002 device  1 [0019:01:00] NVIDIA GH200 144G HBM3e
+#  Rank  6 Group  0 Pid 3810453 on  compgh003 device  0 [0009:01:00] NVIDIA GH200 144G HBM3e
+#  Rank  7 Group  0 Pid 3810454 on  compgh003 device  1 [0019:01:00] NVIDIA GH200 144G HBM3e
+#
+# Reducing maxBytes to 49213166933 due to memory limitation
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+  1073741824     268435456     float     sum      -1  46572.8   23.06   40.35       0  46449.4   23.12   40.45       0
