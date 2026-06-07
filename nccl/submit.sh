@@ -31,7 +31,7 @@ srun --gpu-bind=closest $BIN/all_reduce_perf \
   -b 1G \
   -e 128G \
   -f 2 \
-  -n 10000 \
-  -w 50 \
+  -n 1000 \
+  -w 10 \
   -d float \
   -o sum

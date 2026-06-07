@@ -1,0 +1,31 @@
+# nccl-tests version 2.18.3 nccl-headers=22707 nccl-library=22707
+# Collective test starting: all_reduce_perf
+# nThread 1 nGpus 1 minBytes 1073741824 maxBytes 137438953472 step: 2(factor) warmup iters: 10 iters: 1000 agg iters: 1 validation: 1 graph: 0 unalign: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid 1511733 on  compgh000 device  0 [0009:01:00] NVIDIA GH200 144G HBM3e
+#  Rank  1 Group  0 Pid 1511734 on  compgh000 device  1 [0019:01:00] NVIDIA GH200 144G HBM3e
+#  Rank  2 Group  0 Pid 4141826 on  compgh001 device  0 [0009:01:00] NVIDIA GH200 144G HBM3e
+#  Rank  3 Group  0 Pid 4141827 on  compgh001 device  1 [0019:01:00] NVIDIA GH200 144G HBM3e
+#  Rank  4 Group  0 Pid 3856045 on  compgh002 device  0 [0009:01:00] NVIDIA GH200 144G HBM3e
+#  Rank  5 Group  0 Pid 3856046 on  compgh002 device  1 [0019:01:00] NVIDIA GH200 144G HBM3e
+#  Rank  6 Group  0 Pid 3793221 on  compgh003 device  0 [0009:01:00] NVIDIA GH200 144G HBM3e
+#  Rank  7 Group  0 Pid 3793222 on  compgh003 device  1 [0019:01:00] NVIDIA GH200 144G HBM3e
+#
+# Reducing maxBytes to 49213166933 due to memory limitation
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw  #wrong     time   algbw   busbw  #wrong 
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)             (us)  (GB/s)  (GB/s)         
+  1073741824     268435456     float     sum      -1  46519.8   23.08   40.39       0  46439.5   23.12   40.46       0
+  2147483648     536870912     float     sum      -1  92758.3   23.15   40.51       0  92774.4   23.15   40.51       0
+  4294967296    1073741824     float     sum      -1   185415   23.16   40.54       0   185443   23.16   40.53       0
+  8589934592    2147483648     float     sum      -1   371051   23.15   40.51       0   371021   23.15   40.52       0
+ 17179869184    4294967296     float     sum      -1   742830   23.13   40.47       0   742743   23.13   40.48       0
+ 34359738368    8589934592     float     sum      -1  1486196   23.12   40.46       0  1486010   23.12   40.46       0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 40.4874 
+#
+# Collective test concluded: all_reduce_perf
+#
+
