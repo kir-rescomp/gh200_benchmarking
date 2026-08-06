@@ -13,6 +13,7 @@ module use /apps/eb/el9/2025a/aarch64/modules/all/
 export UV_PYTHON_INSTALL_DIR=""
 export UV_CACHE_DIR=""
 
+uv venv nichecompass --python=3.11
 uv pip install torch --extra-index-url https://download.pytorch.org/whl/cu126
 uv pip install cmake
 uv pip install torch_scatter torch_sparse \
@@ -21,8 +22,8 @@ uv pip install torch_scatter torch_sparse \
 
 # pyg-lib for aarch64 has to be compiled from source as there
 # aren't any pre-compiled binaries
-cd pyg-lib
 git clone https://github.com/pyg-team/pyg-lib.git
+cd pyg-lib
 git submodule update --init --recursive
 
 TORCH_CUDA_ARCH_LIST="9.0" \
