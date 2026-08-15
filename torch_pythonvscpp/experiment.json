@@ -1,0 +1,57 @@
+{
+  "_comment": "Single source of truth for BOTH Python and C++. Neither implementation may hardcode any of these values. If a value is not here, it is a bug.",
+
+  "seed": 42,
+  "model": "resnet18",
+  "cifar_stem": true,
+  "_cifar_stem_comment": "true = replace 7x7/s2 stem + maxpool with 3x3/s1 and Identity (CIFAR-appropriate). MUST match on both sides.",
+
+  "num_classes": 10,
+
+  "data": {
+    "root": "./dataset",
+    "normalize_mean": [0.4914, 0.4822, 0.4465],
+    "normalize_std": [0.2470, 0.2435, 0.2616],
+    "train_random_crop_padding": 4,
+    "train_random_horizontal_flip": true
+  },
+
+  "train": {
+    "epochs": 30,
+    "batch_size": 128,
+    "optimizer": "sgd",
+    "lr": 0.1,
+    "momentum": 0.9,
+    "weight_decay": 0.0005,
+    "nesterov": false,
+    "lr_schedule": "cosine",
+    "warmup_epochs": 0
+  },
+
+  "precision": "fp32",
+  "_precision_comment": "fp32 | tf32 | bf16_amp. Parity gate runs in fp32 for deterministic bitwise-close comparison.",
+
+  "cudnn_benchmark": true,
+  "cudnn_deterministic_for_parity": true,
+
+  "parity": {
+    "shared_init_weights": "./parity/init_resnet18.pt",
+    "shared_input_batch": "./parity/fixed_batch.pt",
+    "forward_atol": 1e-4,
+    "forward_rtol": 1e-4,
+    "grad_atol": 1e-4,
+    "grad_rtol": 1e-4,
+    "accuracy_tolerance_pct": 1.0,
+    "accuracy_num_seeds": 5
+  },
+
+  "harness": {
+    "warmup_epochs": 1,
+    "warmup_steps_per_epoch": 50,
+    "measured_repeats": 5,
+    "inference_latency_iters": 5000,
+    "inference_warmup_iters": 500,
+    "latency_batch_size": 1,
+    "throughput_batch_size": 512
+  }
+}
